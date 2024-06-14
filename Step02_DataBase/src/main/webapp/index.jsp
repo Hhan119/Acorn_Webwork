@@ -33,7 +33,7 @@
 			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/friend/list.jsp">친구목록 보기</a></li>
 			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/guest/list.jsp">방명록</a></li>
 		</ul>
-	</div>
+	
 	
 	<div id="carouselExampleIndicators" class="carousel slide">
   		<div class="carousel-indicators">
@@ -43,13 +43,13 @@
   		</div>
   	<div class="carousel-inner">
     	<div class="carousel-item active">
-     		 <img src="images/01_iron_man_2.jpg" class="d-block w-100" height="600px" alt="...">
+     		 <img src="images/01_iron_man_2.jpg" class="d-block w-100" height="600px"  alt="...">
     	</div>
     	<div class="carousel-item">
-     		<img src="images/02_the_last_airbender.jpg" class="d-block w-100" alt="...">
+     		<img src="images/02_the_last_airbender.jpg" class="d-block w-100" height="600px" alt="...">
     	</div>
     	<div class="carousel-item">
-      		<img src="images/kingKong.jpg" class="d-block w-100" alt="...">
+      		<img src="images/kingKong.jpg" class="d-block w-100" height="600px" alt="...">
     	</div>
   	</div>
   	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

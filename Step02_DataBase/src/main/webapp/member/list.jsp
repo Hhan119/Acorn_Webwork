@@ -21,7 +21,7 @@
 		<jsp:param value="member" name="current"/>
 	</jsp:include>
 
-	<div class="container">
+	<div class="container alias-center">
 		
 		<a href="insertform.jsp">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
@@ -59,6 +59,7 @@
 					</a></td>
 			</tr>
 			<% }%>
+			</div>
 		</tbody>
 	</table>	
 	

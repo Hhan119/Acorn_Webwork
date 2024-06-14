@@ -36,7 +36,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>/guest/update.jsp</title>
 </head>
 <body>
 	<div class="container">
