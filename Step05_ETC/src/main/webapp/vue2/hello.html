@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>vue2/hello.html</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+	<div id="one">
+		<input type="text" id="inputMsg" />
+		<button id="printBtn">출력</button>
+		<p id="result"></p>
+	</div>
+	<script>
+		document.querySelector("#printBtn").addEventListener("click", ()=>{
+			// 입력한 문자열 읽어오기
+			const msg = document.querySelector("#inputMsg").value;
+			// p 요소의 innerText로 출력하기
+			document.querySelector("#result").innerText=msg;
+		})
+	</script>
+	<div id="two">
+		<input type="text" v-model="msg" />
+		<button v-on:click="print">출력하기</button>
+		<p> msg : <strong>{{msg}}</strong></p>
+		<p>{{ result }}</p>
+	</div>
+	
+	<script>
+		// 로딩된 vue js 를 화용해서 동작 정의하기
+		new Vue({
+			// 어떤 요소에 일어나는 일을 제어 할 것인지 선택자를 명시한다.
+			el : "#two",
+			// 해당 요소에서 필요로 하는 모델을 만들어 놓고 사용할 수 있다. 
+			data : {
+				result : "",
+				msg : ""
+				},
+				// 해당 요소에서 필요한 함수(메소드)를 만들어 놓고 사용할 수 있다. 
+				methods : {
+					print : function(){
+						// 함수 안에서 모델을 참조하는 방법은 this.모델명
+						this.result = this.msg;
+					}
+				}
+		});
+	</script>
+</body>
+</html>

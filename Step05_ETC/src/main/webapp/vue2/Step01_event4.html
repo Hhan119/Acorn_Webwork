@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/vue2/Step01_event4.html</title>
+<style>
+	.box{
+		width : 100px;
+		height: 100px;
+		border : 1px solid blue;
+	}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div class="container" id="app">
+		<h1>이벤트가 일어난 바로 그 요소</h1>
+		<div class="box" @click="divClicred">div1</div>
+		<div class="box" @click="divClicred">div2</div>
+		<div class="box" @click="divClicred">div3</div>
+		<div class="box" @click="divClicred">div4</div>
+		<div class="box" @click="divClicred">div5</div>
+	</div>
+	
+	<script>
+	/* 클릭한 div의 innertext를 "clicked!" 배경색 "yellow"로 변경되도록 해보세요 */
+	new Vue({
+		el : "#app",
+		methods : {
+			divClicred(e){
+				// e.target은 이벤트(click)가 발생한 바로 그 요소의 참조 값
+ 				e.target.innerText = "clicked!";
+ 				e.target.style.backgroundColor = "yellow";
+			}
+		}	
+	});
+	</script>
+	
+</body>
+</html>
