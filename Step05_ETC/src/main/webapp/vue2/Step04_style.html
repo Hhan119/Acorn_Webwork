@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/vue2/Step04_style.html</title>
+</head>
+<body>
+	<div class="container" id="app">
+		<h3>vue js에서 인라인 css 조작하기</h3>
+		<p v-bind:style="{color:'red', fontSize:'30px'}">p1 입니다,</p>
+		
+		<input type="range"  v-model="fontSize" begin="10" end="100" />
+		<strong>{{fontSize}}</strong>px
+		<br />
+		글자의 색상
+		<select v-model="color">
+			<option>black</option>
+			<option>red</option>
+			<option>blue</option>
+		</select>
+		<p :style="{fontSize:fontSize+'px', color:color}">p2 입니다.</p>
+		<p :style="obj">p3입니다.</p>
+		<p :style="myStyle">p4입니다.</p>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	/*
+			computed object 안에 있는 함수의 이름이 모델명이다.
+			해당 함수 안에서 리턴하는 데이터가 모델 데이터이다.
+			또 다른 모델 데이터를 이용해서 모델 데이터에 활욜 할 때 사용한다.
+			함수이기 때문에 함수 안에서 여러가지 로직을 수행한 다음 데이터를 리턴해줄수도 있다. 
+	*/
+		new Vue({
+			el : "#app",
+			data : {
+				fontSize:16,
+				color:"blue",
+				obj:{fontSize:"30px", backgroundColor:"yellow"}
+			},
+			computed:{
+				myStyle(){
+					console.log("myStyle() 함수 호출됨!")
+					// 함수 안에서 리턴하는 object를 view에서 모델로 사용하면된다.
+					return {color:this.color, fontSize:this.fontSize+ 'px'}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

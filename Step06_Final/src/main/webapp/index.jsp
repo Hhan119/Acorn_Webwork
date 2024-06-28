@@ -7,8 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Index.jsp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+	<!-- navbar 호출 -->
+	<jsp:include page="/include/navbar.jsp">
+		<jsp:param value="index" name="current" ></jsp:param>
+	</jsp:include>
 	<div class="container">
 		<c:choose>
 			<c:when test="${not empty sessionScope.id }">
@@ -25,6 +30,17 @@
 			</c:otherwise>
 		</c:choose>
 		<h1>인덱스 페이지입니다.</h1>
+		<ul>
+			<li><a href="/Step06_Final/file/list.jsp">자료실 목록보기</a></li>
+			<li><a href="${pageContext.request.contextPath }/shop/buy.jsp?id=1&count=2">1번상품 2개 구매하기</a></li>
+			<li><a href="${pageContext.request.contextPath }/shop/buy.jsp?id=5&count=3">5번상품 3개 구매하기</a></li>
+			<li><a href="${pageContext.request.contextPath }/cafe/list.jsp">cafe 글 목록보기</a></li>
+		</ul>
 	</div>
+	
+	<jsp:include page="/include/footer.jsp">
+		<jsp:param value="index" name="current"/>
+	</jsp:include>
+	
 </body>
 </html>

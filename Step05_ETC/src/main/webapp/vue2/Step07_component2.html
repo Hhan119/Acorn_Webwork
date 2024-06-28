@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/vue2/Step07_component2.html</title>
+<style>
+	.box{
+		width:100px;
+		height :100px;
+		background-color: yellow;
+		border: 1px solid blue;
+	}
+</style>
+</head>
+
+<body>
+	<div class="container" id="app">
+		<h1>재사용 가능한 component 정의하고 사용하기</h1>
+		<my-component></my-component>
+		<my-component></my-component>
+		<h1>property 값을 전달 할 수 있는 your-componenet 사용하기</h1>
+		<your-component v-bind:title="'호랑이'"></your-component>
+		<your-component v-bind:title="'강아지'"></your-component>
+		<your-component v-bind:title="name"></your-component>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		/*
+			재사용 가능한 컴포넌트를 전역으로 정의하기
+			Vue.component("컴포넌트 이름", {컴포넌트데이터})
+		*/
+		
+		Vue.component("my-component", {
+			template : `<div class="box">box</div>`
+		});
+				
+	
+		new Vue({
+			el : "#app",
+			data : {
+				name:"늑대"
+			}
+		
+		});
+	</script>
+</body>
+</html>
